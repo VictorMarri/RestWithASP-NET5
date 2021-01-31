@@ -1,4 +1,5 @@
 ﻿using RestWithASPNETFive.Models;
+using RestWithASPNETFive.Models.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,13 @@ namespace RestWithASPNETFive.Services.Implementations
 {
     public class PersonServiceImplementation : IPersonService
     {
-       
-        private volatile int count;
-        private Person person;
+
+        private MySQLContext _context;
+
+        public PersonServiceImplementation(MySQLContext context)
+        {
+            _context = context;
+        }
 
         public Person Create(Person person)
         {
@@ -25,13 +30,8 @@ namespace RestWithASPNETFive.Services.Implementations
 
         public List<Person> FindAll()
         {
-            List<Person> people = new List<Person>();
-            for (int i = 0; i < 8; i++)
-            {
-                Person person = MockPerson(i);
-                people.Add(person);
-            }
-            return people;
+
+            return _context.Persons.ToList();
         }
 
        
@@ -55,22 +55,6 @@ namespace RestWithASPNETFive.Services.Implementations
             return person;
         }
 
-        private Person MockPerson(int i)
-        {
-            return new Person
-            {
-                Id = IncrementAndGet(),
-                FirstName = "Name" + i,
-                LastName = "Last Name" + i,
-                Address = "Address" + i,
-                Gender = "Female"
 
-            };
-        }
-
-        private long IncrementAndGet()
-        {
-            return Interlocked.Increment(ref count);
-        }
     }
 }

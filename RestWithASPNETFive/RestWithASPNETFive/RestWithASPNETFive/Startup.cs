@@ -2,10 +2,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using RestWithASPNETFive.Models.Context;
 using RestWithASPNETFive.Services;
 using RestWithASPNETFive.Services.Implementations;
 using System;
@@ -29,7 +31,9 @@ namespace RestWithASPNETFive
         {
 
             services.AddControllers();
+            //Pegando string de conexão do banco diretamente do nosso AppSettings.Json. lê todas as propriedades, encontra nome igual que colocamos aqui e aplica o valor dado a ela
 
+            services.AddDbContext<MySQLContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             //Injeção de Dependencia
             services.AddScoped<IPersonService, PersonServiceImplementation>();
         }
