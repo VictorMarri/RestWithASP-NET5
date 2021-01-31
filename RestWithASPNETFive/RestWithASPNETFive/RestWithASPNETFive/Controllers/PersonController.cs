@@ -5,8 +5,9 @@ using RestWithASPNETFive.Services;
 
 namespace RestWithASPNETFive.Controllers
 {
+    [ApiVersion("1")]
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("v{version:apiVersion}/api/[controller]")]
     public class PersonController : Controller
     {
         private readonly ILogger<PersonController> _logger;

@@ -22,6 +22,8 @@ namespace RestWithASPNETFive
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Adicionando Versionamento de APIs
+            services.AddApiVersioning();
 
             services.AddControllers();
             //Pegando string de conexão do banco diretamente do nosso AppSettings.Json. lê todas as propriedades, encontra nome igual que colocamos aqui e aplica o valor dado a ela
