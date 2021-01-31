@@ -8,7 +8,7 @@ namespace RestWithASPNETFive.Models.Context
         {
         }
 
-        public MySQLContext(DbContextOptions<MySQLContext> options):base(options)
+        public MySQLContext(DbContextOptions<MySQLContext> options) : base(options)
         {
 
         }

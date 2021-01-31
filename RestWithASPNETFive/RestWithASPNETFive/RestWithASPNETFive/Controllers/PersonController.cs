@@ -2,10 +2,6 @@
 using Microsoft.Extensions.Logging;
 using RestWithASPNETFive.Models;
 using RestWithASPNETFive.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace RestWithASPNETFive.Controllers
 {
@@ -32,7 +28,7 @@ namespace RestWithASPNETFive.Controllers
         public IActionResult Get(long id)
         {
             var person = _personService.FindById(id);
-            if (person.Equals(null))
+            if (person == null)
             {
                 return NotFound();
             }
@@ -62,12 +58,12 @@ namespace RestWithASPNETFive.Controllers
             return Ok(_personService.Update(person));
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult Delete(long id)
         {
             var find = _personService.FindById(id);
 
-            if (find.Equals(null))
+            if (find == null)
             {
                 return NotFound();
             }
