@@ -7,6 +7,7 @@ C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\bin\Debug\net5.0\RestWithASPNETFive.dll
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\bin\Debug\net5.0\ref\RestWithASPNETFive.dll
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\bin\Debug\net5.0\RestWithASPNETFive.pdb
+C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\bin\Debug\net5.0\Microsoft.Bcl.HashCode.dll
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
@@ -21,6 +22,7 @@ C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\obj\Debug\net5.0\RestWithASPNETFive.AssemblyInfoInputs.cache
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\obj\Debug\net5.0\RestWithASPNETFive.AssemblyInfo.cs
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\obj\Debug\net5.0\RestWithASPNETFive.csproj.CoreCompileInputs.cache
+C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\obj\Debug\net5.0\RestWithASPNETFive.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\obj\Debug\net5.0\RestWithASPNETFive.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\obj\Debug\net5.0\staticwebassets\RestWithASPNETFive.StaticWebAssets.Manifest.cache
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\obj\Debug\net5.0\staticwebassets\RestWithASPNETFive.StaticWebAssets.xml
@@ -31,5 +33,3 @@ C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\obj\Debug\net5.0\ref\RestWithASPNETFive.dll
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\obj\Debug\net5.0\RestWithASPNETFive.pdb
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\obj\Debug\net5.0\RestWithASPNETFive.genruntimeconfig.cache
-C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll
-C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\obj\Debug\net5.0\RestWithASPNETFive.MvcApplicationPartsAssemblyInfo.cs
