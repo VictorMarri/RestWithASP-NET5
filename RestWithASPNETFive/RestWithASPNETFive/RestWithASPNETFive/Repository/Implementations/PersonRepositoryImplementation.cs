@@ -48,7 +48,7 @@ namespace RestWithASPNETFive.Repository.Implementations
         public Person Update(Person person)
         {
             if (!Exists(person.Id)) //Se metodo retorna false, cria-se uma person
-                return new Person();
+                return null;
 
             var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(person.Id));
 
