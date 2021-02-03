@@ -51,6 +51,8 @@ namespace RestWithASPNETFive
             //Injeção de Dependencia
             services.AddScoped<IPersonService, PersonServiceImplementation>();
             services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
+            services.AddScoped<IBookRepository, BookRepositoryImplementation>();
+            services.AddScoped<IBookService, BookServiceImplementation>();
         }
 
        
