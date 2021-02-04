@@ -14,7 +14,7 @@ namespace RestWithASPNETFive.Models
         [Column("author")]
         public string  Author { get; set; }
         [Column("launch_date")]
-        public string LaunchDate { get; set; }
+        public DateTime LaunchDate { get; set; }
         [Column("price")]
         public float Price { get; set; }
         [Column("title")]
