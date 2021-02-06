@@ -1,5 +1,6 @@
 ﻿using RestWithASPNETFive.Models;
 using RestWithASPNETFive.Repository;
+using RestWithASPNETFive.Repository.Generic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,9 @@ namespace RestWithASPNETFive.Services.Implementations
     public class BookServiceImplementation : IBookService
     {
 
-        private readonly IBookRepository _repository;
+        private readonly IRepository<Book> _repository;
 
-        public BookServiceImplementation(IBookRepository repository)
+        public BookServiceImplementation(IRepository<Book> repository)
         {
             _repository = repository;
         }

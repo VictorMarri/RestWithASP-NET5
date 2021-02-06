@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestWithASPNETFive.Models.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -7,10 +8,9 @@ using System.Threading.Tasks;
 namespace RestWithASPNETFive.Models
 {
     [Table("books")]
-    public class Book
+    public class Book : BaseEntity
     {
-        [Column("id")]
-        public long id { get; set; }
+
         [Column("author")]
         public string  Author { get; set; }
         [Column("launch_date")]

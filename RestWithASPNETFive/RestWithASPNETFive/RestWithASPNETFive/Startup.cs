@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RestWithASPNETFive.Models.Context;
 using RestWithASPNETFive.Repository;
+using RestWithASPNETFive.Repository.Generic;
 using RestWithASPNETFive.Repository.Implementations;
 using RestWithASPNETFive.Services;
 using RestWithASPNETFive.Services.Implementations;
@@ -51,7 +52,8 @@ namespace RestWithASPNETFive
             //Injeção de Dependencia
             services.AddScoped<IPersonService, PersonServiceImplementation>();
             services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
-            services.AddScoped<IBookRepository, BookRepositoryImplementation>();
+            
+            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IBookService, BookServiceImplementation>();
         }
 
