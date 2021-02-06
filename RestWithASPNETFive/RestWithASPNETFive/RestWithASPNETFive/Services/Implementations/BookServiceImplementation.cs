@@ -1,10 +1,6 @@
 ﻿using RestWithASPNETFive.Models;
-using RestWithASPNETFive.Repository;
 using RestWithASPNETFive.Repository.Generic;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace RestWithASPNETFive.Services.Implementations
 {
@@ -20,12 +16,12 @@ namespace RestWithASPNETFive.Services.Implementations
 
         public Book Create(Book book)
         {
-           return _repository.Create(book);
+            return _repository.Create(book);
         }
 
         public void Delete(long id)
         {
-           _repository.Delete(id);
+            _repository.Delete(id);
         }
 
         public List<Book> FindAll()

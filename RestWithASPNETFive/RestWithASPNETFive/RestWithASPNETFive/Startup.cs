@@ -5,9 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RestWithASPNETFive.Models.Context;
-using RestWithASPNETFive.Repository;
 using RestWithASPNETFive.Repository.Generic;
-using RestWithASPNETFive.Repository.Implementations;
 using RestWithASPNETFive.Services;
 using RestWithASPNETFive.Services.Implementations;
 using Serilog;
@@ -28,7 +26,7 @@ namespace RestWithASPNETFive
             Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
         }
 
-        
+
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -51,13 +49,13 @@ namespace RestWithASPNETFive
 
             //Injeção de Dependencia
             services.AddScoped<IPersonService, PersonServiceImplementation>();
-            services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
-            
+
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
+
             services.AddScoped<IBookService, BookServiceImplementation>();
         }
 
-       
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

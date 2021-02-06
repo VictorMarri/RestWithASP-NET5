@@ -1,9 +1,6 @@
 ﻿using RestWithASPNETFive.Models.Base;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace RestWithASPNETFive.Models
 {
@@ -12,7 +9,7 @@ namespace RestWithASPNETFive.Models
     {
 
         [Column("author")]
-        public string  Author { get; set; }
+        public string Author { get; set; }
         [Column("launch_date")]
         public DateTime LaunchDate { get; set; }
         [Column("price")]

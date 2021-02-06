@@ -1,18 +1,15 @@
 ﻿using RestWithASPNETFive.Models;
-using RestWithASPNETFive.Models.Context;
-using RestWithASPNETFive.Repository;
-using System;
+using RestWithASPNETFive.Repository.Generic;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace RestWithASPNETFive.Services.Implementations
 {
     public class PersonServiceImplementation : IPersonService
     {
-        private readonly IPersonRepository _repository;
-       
+        private readonly IRepository<Person> _repository;
 
-        public PersonServiceImplementation(IPersonRepository repository)
+
+        public PersonServiceImplementation(IRepository<Person> repository)
         {
             _repository = repository;
         }
@@ -48,7 +45,7 @@ namespace RestWithASPNETFive.Services.Implementations
             _repository.Delete(id);
         }
 
-     
+
 
 
     }

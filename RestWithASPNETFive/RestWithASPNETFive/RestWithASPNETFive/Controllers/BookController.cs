@@ -2,10 +2,6 @@
 using Microsoft.Extensions.Logging;
 using RestWithASPNETFive.Models;
 using RestWithASPNETFive.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace RestWithASPNETFive.Controllers
 {
@@ -28,13 +24,13 @@ namespace RestWithASPNETFive.Controllers
         {
             return Ok(_bookService.FindAll());
         }
-        
+
         [HttpGet("{id}")]
         public IActionResult Get(long id)
         {
             var pesquisa = _bookService.FindById(id);
 
-            if(pesquisa == null)
+            if (pesquisa == null)
             {
                 return NotFound();
             }
