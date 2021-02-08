@@ -71,7 +71,7 @@ namespace RestWithASPNETFive.Data.Converter.Implementations
                 return null;
             }
 
-            return origin.Select(item => Parse(item)).ToList();
+            return origin.Select(item => Parse(item)).ToList(); 
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using RestWithASPNETFive.Data.VO;
 using RestWithASPNETFive.Models;
 using RestWithASPNETFive.Services;
 
@@ -38,7 +39,7 @@ namespace RestWithASPNETFive.Controllers
 
         //Pega do Body (FromBody) os dados de Person
         [HttpPost]
-        public IActionResult Post([FromBody] Person person)
+        public IActionResult Post([FromBody] PersonVO person)
         {
             if (person.Equals(null))
             {
@@ -49,7 +50,7 @@ namespace RestWithASPNETFive.Controllers
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody] Person person)
+        public IActionResult Put([FromBody] PersonVO person)
         {
             if (person.Equals(null))
             {
