@@ -44,3 +44,4 @@ C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\obj\Debug\net5.0\ref\RestWithASPNETFive.dll
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\obj\Debug\net5.0\RestWithASPNETFive.pdb
 C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\obj\Debug\net5.0\RestWithASPNETFive.genruntimeconfig.cache
+C:\Users\Victor Marri\source\repos\RestWithASP-NET5\RestWithASP-NET5\RestWithASPNETFive\RestWithASPNETFive\RestWithASPNETFive\obj\Debug\net5.0\RestWithASPNETFive.csprojAssemblyReference.cache
