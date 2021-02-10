@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using RestWithASPNETFive.Data.VO;
 using RestWithASPNETFive.Models;
 using RestWithASPNETFive.Services;
 
@@ -39,7 +40,7 @@ namespace RestWithASPNETFive.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Book book)
+        public IActionResult Post([FromBody] BookVO book)
         {
             if (book == null)
             {
@@ -64,7 +65,7 @@ namespace RestWithASPNETFive.Controllers
         }
 
         [HttpPut]
-        public IActionResult Update(Book book)
+        public IActionResult Update(BookVO book)
         {
             if (book == null)
             {

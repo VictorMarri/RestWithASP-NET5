@@ -1,4 +1,6 @@
-﻿using RestWithASPNETFive.Models;
+﻿using RestWithASPNETFive.Data.Converter.Implementations;
+using RestWithASPNETFive.Data.VO;
+using RestWithASPNETFive.Models;
 using RestWithASPNETFive.Repository.Generic;
 using System.Collections.Generic;
 
@@ -8,15 +10,22 @@ namespace RestWithASPNETFive.Services.Implementations
     {
 
         private readonly IRepository<Book> _repository;
+        private readonly BookConverter _converter;
 
         public BookServiceImplementation(IRepository<Book> repository)
         {
             _repository = repository;
+            _converter = new BookConverter();
         }
 
-        public Book Create(Book book)
+        public BookVO Create(BookVO book)
         {
-            return _repository.Create(book);
+            var bookConvert = _converter.Parse(book);
+
+            bookConvert = _repository.Create(bookConvert);
+
+            return _converter.Parse(bookConvert);
+
         }
 
         public void Delete(long id)
@@ -24,19 +33,23 @@ namespace RestWithASPNETFive.Services.Implementations
             _repository.Delete(id);
         }
 
-        public List<Book> FindAll()
+        public List<BookVO> FindAll()
         {
-            return _repository.FindAll();
+            return _converter.Parse(_repository.FindAll());
         }
 
-        public Book FindById(long id)
+        public BookVO FindById(long id)
         {
-            return _repository.FindById(id);
+            return _converter.Parse(_repository.FindById(id));
         }
 
-        public Book Update(Book book)
+        public BookVO Update(BookVO book)
         {
-            return _repository.Update(book);
+            var bookConvert = _converter.Parse(book);
+
+            bookConvert = _repository.Update(bookConvert);
+
+            return _converter.Parse(bookConvert);
         }
     }
 }
