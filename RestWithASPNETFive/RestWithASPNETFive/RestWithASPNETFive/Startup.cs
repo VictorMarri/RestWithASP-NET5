@@ -11,6 +11,7 @@ using RestWithASPNETFive.Services.Implementations;
 using Serilog;
 using System;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 
 namespace RestWithASPNETFive
 {
@@ -31,10 +32,20 @@ namespace RestWithASPNETFive
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             //Adicionando Versionamento de APIs
             services.AddApiVersioning();
 
             services.AddControllers();
+
+            services.AddMvc(options =>
+            {
+                options.RespectBrowserAcceptHeader = true;
+
+                options.FormatterMappings.SetMediaTypeMappingForFormat("xml", MediaTypeHeaderValue.Parse("application/xml").ToString());
+                options.FormatterMappings.SetMediaTypeMappingForFormat("json", MediaTypeHeaderValue.Parse("application/json").ToString());
+            })
+                .AddXmlSerializerFormatters();
 
             //Pegando string de conexão do banco diretamente do nosso AppSettings.Json. lê todas as propriedades, encontra nome igual que colocamos aqui e aplica o valor dado a ela
             var connection = Configuration.GetConnectionString("DefaultConnection");
