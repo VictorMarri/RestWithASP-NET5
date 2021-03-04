@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RestWithASPNETFive.Hypermedia.Enricher;
+using RestWithASPNETFive.Hypermedia.Filters;
 using RestWithASPNETFive.Models.Context;
 using RestWithASPNETFive.Repository.Generic;
 using RestWithASPNETFive.Services;
@@ -32,7 +34,12 @@ namespace RestWithASPNETFive
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            var filterOptions = new HypermediaFilterOptions();
+            filterOptions.ContentResponseEnricherList.Add(new PersonEnricher());
+            filterOptions.ContentResponseEnricherList.Add(new BookEnricher());
+
+            services.AddSingleton(filterOptions);
+
             //Adicionando Versionamento de APIs
             services.AddApiVersioning();
 
@@ -85,6 +92,7 @@ namespace RestWithASPNETFive
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapControllerRoute("DefaultApi", "{controller=values}/{id?}");
             });
         }
 

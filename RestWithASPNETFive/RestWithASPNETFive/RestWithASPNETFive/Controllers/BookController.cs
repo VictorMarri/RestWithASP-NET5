@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RestWithASPNETFive.Data.VO;
-using RestWithASPNETFive.Models;
+using RestWithASPNETFive.Hypermedia.Filters;
 using RestWithASPNETFive.Services;
 
 namespace RestWithASPNETFive.Controllers
@@ -21,12 +21,14 @@ namespace RestWithASPNETFive.Controllers
         }
 
         [HttpGet]
+        [TypeFilter(typeof(HypermediaFilter))]
         public IActionResult Get()
         {
             return Ok(_bookService.FindAll());
         }
 
         [HttpGet("{id}")]
+        [TypeFilter(typeof(HypermediaFilter))]
         public IActionResult Get(long id)
         {
             var pesquisa = _bookService.FindById(id);
@@ -40,6 +42,7 @@ namespace RestWithASPNETFive.Controllers
         }
 
         [HttpPost]
+        [TypeFilter(typeof(HypermediaFilter))]
         public IActionResult Post([FromBody] BookVO book)
         {
             if (book == null)
@@ -65,6 +68,7 @@ namespace RestWithASPNETFive.Controllers
         }
 
         [HttpPut]
+        [TypeFilter(typeof(HypermediaFilter))]
         public IActionResult Update(BookVO book)
         {
             if (book == null)

@@ -1,5 +1,4 @@
 ﻿using RestWithASPNETFive.Data.VO;
-using RestWithASPNETFive.Models;
 using System.Collections.Generic;
 
 namespace RestWithASPNETFive.Services
