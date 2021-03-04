@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RestWithASPNETFive.Data.VO;
-using RestWithASPNETFive.Hypermedia.Filters;
 using RestWithASPNETFive.Services;
 
 namespace RestWithASPNETFive.Controllers
@@ -21,14 +20,14 @@ namespace RestWithASPNETFive.Controllers
         }
 
         [HttpGet]
-        [TypeFilter(typeof(HypermediaFilter))]
+       
         public IActionResult Get()
         {
             return Ok(_personService.FindAll());
         }
 
         [HttpGet("{id}")]
-        [TypeFilter(typeof(HypermediaFilter))]
+        
         public IActionResult Get(long id)
         {
             var person = _personService.FindById(id);
@@ -41,7 +40,7 @@ namespace RestWithASPNETFive.Controllers
 
         //Pega do Body (FromBody) os dados de Person
         [HttpPost]
-        [TypeFilter(typeof(HypermediaFilter))]
+        
         public IActionResult Post([FromBody] PersonVO person)
         {
             if (person.Equals(null))
@@ -53,7 +52,7 @@ namespace RestWithASPNETFive.Controllers
         }
 
         [HttpPut]
-        [TypeFilter(typeof(HypermediaFilter))]
+        
         public IActionResult Put([FromBody] PersonVO person)
         {
             if (person.Equals(null))

@@ -1,12 +1,9 @@
-﻿using RestWithASPNETFive.Hypermedia;
-using RestWithASPNETFive.Hypermedia.Abstract;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Text.Json.Serialization;
 
 namespace RestWithASPNETFive.Data.VO
 {
-    public class BookVO : ISupportsHypermedia
+    public class BookVO 
     {
         [JsonIgnore]
         public long Id { get; set; }
@@ -18,6 +15,6 @@ namespace RestWithASPNETFive.Data.VO
         public float Price { get; set; }
         [JsonPropertyName("titulo")]
         public string Title { get; set; }
-        public List<HyperMediaLink> Links { get; set; } = new List<HyperMediaLink>();
+
     }
 }
