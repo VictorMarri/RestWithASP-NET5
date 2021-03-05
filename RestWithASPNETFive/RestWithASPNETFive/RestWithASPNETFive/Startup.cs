@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using RestWithASPNETFive.Models.Context;
 using RestWithASPNETFive.Repository.Generic;
 using RestWithASPNETFive.Services;
@@ -36,6 +38,21 @@ namespace RestWithASPNETFive
 
             //Adicionando Versionamento de APIs
             services.AddApiVersioning();
+
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1", 
+                    new OpenApiInfo 
+                    { 
+                        Title = "Victor Rest API with dotnet 5",
+                        Version = "v1",
+                        Description = "API RESTful Developed by Victor Marri",
+                        Contact  =new OpenApiContact 
+                        {
+                            Name = "Victor Marri",
+                            Url = new Uri("https://github.com/VictorMarri")
+                        }
+                    });
+            });
 
             services.AddControllers();
 
@@ -80,6 +97,21 @@ namespace RestWithASPNETFive
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+
+            app.UseSwagger(); //Responsavel por Gerar o JSON com a documentação
+
+            //Responsavel por gerar uma pagina HTML pra acessar a documentação
+            app.UseSwaggerUI(c => 
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", 
+                    "API RESTful Developed by Victor Marri - V1");
+            });
+
+            //COnfiguração da Swagger Page
+            var option = new RewriteOptions();
+            option.AddRedirect("^$","swagger");
+            app.UseRewriter(option);
 
             app.UseAuthorization();
 

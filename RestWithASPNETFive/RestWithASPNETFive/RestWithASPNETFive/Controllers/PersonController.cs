@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using RestWithASPNETFive.Data.VO;
 using RestWithASPNETFive.Services;
+using System.Collections.Generic;
 
 namespace RestWithASPNETFive.Controllers
 {
@@ -20,14 +21,21 @@ namespace RestWithASPNETFive.Controllers
         }
 
         [HttpGet]
-       
+        [ProducesResponseType((200), Type = typeof(List<PersonVO>))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public IActionResult Get()
         {
             return Ok(_personService.FindAll());
         }
 
         [HttpGet("{id}")]
-        
+        [ProducesResponseType((200), Type = typeof(PersonVO))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+
         public IActionResult Get(long id)
         {
             var person = _personService.FindById(id);
@@ -40,7 +48,10 @@ namespace RestWithASPNETFive.Controllers
 
         //Pega do Body (FromBody) os dados de Person
         [HttpPost]
-        
+        [ProducesResponseType((200), Type = typeof(PersonVO))]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+
         public IActionResult Post([FromBody] PersonVO person)
         {
             if (person.Equals(null))
@@ -52,7 +63,10 @@ namespace RestWithASPNETFive.Controllers
         }
 
         [HttpPut]
-        
+        [ProducesResponseType((200), Type = typeof(PersonVO))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public IActionResult Put([FromBody] PersonVO person)
         {
             if (person.Equals(null))
@@ -64,6 +78,9 @@ namespace RestWithASPNETFive.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public IActionResult Delete(long id)
         {
             var find = _personService.FindById(id);
