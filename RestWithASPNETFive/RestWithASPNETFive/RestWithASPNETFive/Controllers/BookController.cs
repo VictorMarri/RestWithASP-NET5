@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using RestWithASPNETFive.Data.VO;
 using RestWithASPNETFive.Services;
+using System.Collections.Generic;
 
 namespace RestWithASPNETFive.Controllers
 {
@@ -20,6 +21,10 @@ namespace RestWithASPNETFive.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType((200), Type = typeof(List<BookVO>))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
        
         public IActionResult Get()
         {
@@ -27,7 +32,11 @@ namespace RestWithASPNETFive.Controllers
         }
 
         [HttpGet("{id}")]
-        
+        [ProducesResponseType((200), Type = typeof(BookVO))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+
         public IActionResult Get(long id)
         {
             var pesquisa = _bookService.FindById(id);
@@ -41,7 +50,10 @@ namespace RestWithASPNETFive.Controllers
         }
 
         [HttpPost]
-        
+        [ProducesResponseType((200), Type = typeof(BookVO))]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+
         public IActionResult Post([FromBody] BookVO book)
         {
             if (book == null)
@@ -67,7 +79,10 @@ namespace RestWithASPNETFive.Controllers
         }
 
         [HttpPut]
-        
+        [ProducesResponseType((200), Type = typeof(BookVO))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public IActionResult Update(BookVO book)
         {
             if (book == null)
