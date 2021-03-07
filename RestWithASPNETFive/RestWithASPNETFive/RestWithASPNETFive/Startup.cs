@@ -54,6 +54,13 @@ namespace RestWithASPNETFive
                     });
             });
 
+            services.AddCors(options => options.AddDefaultPolicy(builder =>
+            {
+                builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            }));
+
             services.AddControllers();
 
             services.AddMvc(options =>
@@ -98,6 +105,7 @@ namespace RestWithASPNETFive
 
             app.UseRouting();
 
+            app.UseCors();
 
             app.UseSwagger(); //Responsavel por Gerar o JSON com a documentação
 
