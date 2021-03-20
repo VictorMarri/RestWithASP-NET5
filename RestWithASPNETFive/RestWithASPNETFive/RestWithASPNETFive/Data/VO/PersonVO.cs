@@ -2,6 +2,9 @@
 
 namespace RestWithASPNETFive.Data.VO
 {
+    /// <summary>
+    /// Classe que faz a representação da entidade base Person para VO
+    /// </summary>
     public class PersonVO
     {
         [JsonIgnore]

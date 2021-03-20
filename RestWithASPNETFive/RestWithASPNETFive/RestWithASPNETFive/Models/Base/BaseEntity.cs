@@ -2,8 +2,14 @@
 
 namespace RestWithASPNETFive.Models.Base
 {
-    public class BaseEntity
+    /// <summary>
+    /// Classe abstrata que representa a adição de Identificador
+    /// </summary>
+    public abstract class BaseEntity
     {
+        /// <summary>
+        /// identificador
+        /// </summary>
         [Column("id")]
         public long Id { get; set; }
     }

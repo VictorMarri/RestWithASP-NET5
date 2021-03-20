@@ -3,6 +3,9 @@ using System.Text.Json.Serialization;
 
 namespace RestWithASPNETFive.Data.VO
 {
+    /// <summary>
+    /// Classe que faz a representação da entidade base Book para VO
+    /// </summary>
     public class BookVO 
     {
         [JsonIgnore]
